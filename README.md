@@ -47,3 +47,6 @@ That's it, you can now start the app:
 yarn install
 yarn start
 ```
+
+Go to **http://localhost:3000** in your browser to start chatting 💬
+
