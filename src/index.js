@@ -9,8 +9,11 @@ import {
 } from 'react-apollo'
 import {SubscriptionClient, addGraphQLSubscriptions} from 'subscriptions-transport-ws'
 
-const subscriptionsUrl = 'wss://subscriptions.graph.cool/v1/cj2upmc4249op0149yfjuojf8'
-const graphQLEndpoint = 'https://api.graph.cool/simple/v1/cj2upmc4249op0149yfjuojf8'
+// looks like: wss://subscriptions.graph.cool/v1/<project-id>
+const subscriptionsUrl = ''
+
+// looks like: https://api.graph.cool/simple/v1/<project-id>
+const graphQLEndpoint = ''
 
 const subscriptionsClient = new SubscriptionClient(subscriptionsUrl, {
   reconnect: true,
