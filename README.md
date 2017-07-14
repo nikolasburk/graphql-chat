@@ -30,7 +30,7 @@ npm install -g graphcool
 graphcool init --schema https://graphqlbin.com/chat.graphql --name Chat
 ```
 
-Copy the endpoint for the `Simple API` and use it in the next step. You can always retrieve your endpoints by using `graphcool endpoints` in the directory where you created the project.
+Copy the endpoint for the `Simple API` and use it in the next step. You can always retrieve your endpoints by using `graphcool endpoints` in the directory where `project.graphcool` is located (usually where you created the project).
 
 ## Connect your App
 
