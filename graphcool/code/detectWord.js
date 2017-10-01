@@ -2,8 +2,8 @@ const fetch = require('isomorphic-fetch')
 const Base64 = require('Base64')
 const FormData = require('form-data')
 
-const apiKey = 'api:key-'
-const url = 'https://api.mailgun.net/v3/__SANDBOX_ID__.mailgun.org/messages'
+const apiKey = 'api:key-__KEY__' // replace KEY
+const url = 'https://api.mailgun.net/v3/__SANDBOX_ID__.mailgun.org/messages' // replace __SANDBOX_ID__
 
 const FORBIDDEN_WORD = 'REST'
 

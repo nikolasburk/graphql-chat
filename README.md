@@ -42,7 +42,7 @@ npm install -g graphcool@beta
 
 > **Note:** The CLI to manage your Graphcool project is currently in beta.
 
-Once the Graphcool CLI is installed, you can use the [`graphcool init`](https://docs-next.graph.cool/reference/basics/cli-zboghez5go#graphcool-init) command to create your GraphQL server. You need to invoke the command from inside the `graphcool` directory. It'll then use the existing [project definition](https://docs-next.graph.cool/reference/basics/project-configuration-opheidaix3#project-definition) (`graphcool.yml` and all related files) to create your project.
+Once the Graphcool CLI is installed, you can use the [`graphcool init`](https://docs-next.graph.cool/reference/basics/cli-zboghez5go#graphcool-init) command to create your GraphQL server. You need to invoke the command from inside the `graphcool` directory. It'll then use the existing [project definition](https://docs-next.graph.cool/reference/basics/project-configuration-opheidaix3#project-definition) (`graphcool.yml` and all related files) to create your project: 
 
 ```sh
 cd graphcool
@@ -66,10 +66,11 @@ yarn install
 yarn start
 ```
 
+Go to **http://localhost:3000** in your browser to start chatting 💬
+
 ### 5. [Optional] Use the Server-side Subscription to send Emails with Mailgun
 
 If you want to make use of the server-side subscription `detectWord` that's configured in `graphcool.yml`, you need to create a [Mailgun](https://www.mailgun.com) sandbox and configure the credentials inside [./graphcool/code/detectWord.js](./graphcool/code/detectWord.js).
 
 
-Go to **http://localhost:3000** in your browser to start chatting 💬
 
