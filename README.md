@@ -26,10 +26,11 @@ type Message {
 
 ### 1. Clone the Repository
 
-Clone the repository with the following command:
+Clone the repository with the following command, then navigate into the cloned project:
 
 ```sh
 git clone git@github.com:nikolasburk/graphql-chat.git
+cd graphql-chat
 ```
 
 ### 2. Get your GraphQL Endpoint
@@ -62,11 +63,12 @@ In `index.js` you need to set the variable `projectId` which is then used in `gr
 That's it, you can now start the app:
 
 ```sh
+cd ..
 yarn install
 yarn start
 ```
 
-Go to **http://localhost:3000** in your browser to start chatting 💬
+Go to **[http://localhost:3000](http://localhost:3000)** in your browser to start chatting 💬
 
 ### 5. [Optional] Use the Server-side Subscription to send Emails with Mailgun
 
