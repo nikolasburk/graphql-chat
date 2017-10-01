@@ -1,5 +1,5 @@
 import React, { Component} from 'react'
-import './ChatInput.css'
+import '../styles/ChatInput.css'
 
 class ChatInput extends Component {
 

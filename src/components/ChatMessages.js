@@ -1,10 +1,11 @@
 import React, { Component} from 'react'
-import './ChatMessages.css'
+import '../styles/ChatMessages.css'
 import ChatMessage from './ChatMessage'
 
 class ChatMessages extends Component {
 
   render() {
+    console.log()
     return (
       <div className='ChatMessages'>
         {this.props.messages.map((message, i) => {
@@ -24,7 +25,3 @@ class ChatMessages extends Component {
 }
 
 export default ChatMessages
-
-ChatMessages.propTypes = {
-
-}

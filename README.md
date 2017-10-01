@@ -1,52 +1,75 @@
 # graphql-chat
 
+## Data Model
 
-## Schema
-
-This is what the data model for the chat looks like:
+This is what the data model for the chat looks like (it's defined in [./graphcool/types.graphql](./graphcool/types.graphql)):
 
 ```graphql
 type Person {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!  
   name: String!
   messages: [Message!]! @relation(name: "UserMessages")
 }
 
 type Message {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!  
   text: String!
   sentBy: Person! @relation(name: "UserMessages")
 }
 ```
 
-## Get your GraphQL Endpoint
+## Get Started
 
-You first have to get your GraphQL endpoint for the above schema using the [Graphcool CLI](https://www.npmjs.com/package/graphcool):
+### 1. Clone the Repository
 
-```
-# Install Graphcool CLI
-npm install -g graphcool
+Clone the repository with the following command:
 
-# Get your GraphQL Endpoint (create project in Graphcool Console)
-# This will open a browser and require you to log in
-graphcool init --schema https://graphqlbin.com/chat.graphql --name Chat
+```sh
+git clone git@github.com:nikolasburk/graphql-chat.git
 ```
 
-Copy the endpoint for the `Simple API` and use it in the next step. You can always retrieve your endpoints by using `graphcool endpoints` in the directory where `project.graphcool` is located (usually where you created the project).
+### 2. Get your GraphQL Endpoint
 
-## Connect your App
+Next you need to create your own GraphQL server that provides an API with CRUD operations for the above data model. You can do this using the [Graphcool CLI](https://docs-next.graph.cool/reference/basics/cli-zboghez5go):
 
-In `index.js` you need to set the variables `graphQLEndpoint` and `subscriptionsUrl`. You can retrieve your endpoints by calling `graphcool endpoints` in the same directory where you created the project (i.e. where you called `graphcool init`).
+```sh
+npm install -g graphcool@beta
+```
 
-- `graphQLEndpoint ` is the endpoint for the **Simple API**
-- `subscriptionsUrl` is the endpoint for the **Subscriptions API**
+> **Note:** The CLI to manage your Graphcool project is currently in beta.
 
-## Run the app 🚀
+Once the Graphcool CLI is installed, you can use the [`graphcool init`](https://docs-next.graph.cool/reference/basics/cli-zboghez5go#graphcool-init) command to create your GraphQL server. You need to invoke the command from inside the `graphcool` directory. It'll then use the existing [project definition](https://docs-next.graph.cool/reference/basics/project-configuration-opheidaix3#project-definition) (`graphcool.yml` and all related files) to create your project.
+
+```sh
+cd graphcool
+graphcool init
+```
+
+> Notice that this command also creates the `.graphcoolrc` file you can use to configure your [environments](https://docs-next.graph.cool/reference/basics/project-configuration-opheidaix3#environments). 
+
+Copy your project ID and use it in the next step. 
+
+### 3. Connect your App
+
+In `index.js` you need to set the variable `projectId` which is then used in `graphQLEndpoint` and `subscriptionsUrl`. 
+
+### 4. Run the App 🚀
 
 That's it, you can now start the app:
 
-```
+```sh
 yarn install
 yarn start
 ```
+
+### 5. [Optional] Use the Server-side Subscription to send Emails with Mailgun
+
+If you want to make use of the server-side subscription `detectWord` that's configured in `graphcool.yml`, you need to create a [Mailgun](https://www.mailgun.com) sandbox and configure the credentials inside [./graphcool/code/detectWord.js](./graphcool/code/detectWord.js).
+
 
 Go to **http://localhost:3000** in your browser to start chatting 💬
 

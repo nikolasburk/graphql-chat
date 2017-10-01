@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
-import './ChatMessage.css'
-import {timeDifference} from './utils'
+import '../styles/ChatMessage.css'
+import {timeDifference} from '../utils'
 
 class ChatMessage extends Component {
 

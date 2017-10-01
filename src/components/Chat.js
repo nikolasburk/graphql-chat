@@ -1,36 +1,8 @@
 import React, { Component } from 'react'
-import './Chat.css'
+import '../styles/Chat.css'
 import ChatInput from './ChatInput'
 import ChatMessages from './ChatMessages'
-import { graphql, compose, gql } from 'react-apollo'
-
-const allMessages = gql`
-  query allMessages {
-    allMessages(last: 100) {
-      id
-      text
-      createdAt
-      sentBy {
-        id
-        name
-      }
-    }
-  }
-`
-
-const createMessage = gql`
-  mutation createMessage($text: String!, $sentById: ID!) {
-    createMessage(text: $text, sentById: $sentById) {
-      id
-      text
-      createdAt
-      sentBy {
-        id
-        name
-      }
-    }
-  }
-`
+import { graphql, gql, compose } from 'react-apollo'
 
 const newMessageSubscription = gql`
   subscription {
@@ -114,6 +86,34 @@ class Chat extends Component {
   }
 
 }
+
+const allMessages = gql`
+  query allMessages {
+    allMessages(last: 100) {
+      id
+      text
+      createdAt
+      sentBy {
+        id
+        name
+      }
+    }
+  }
+`
+
+const createMessage = gql`
+  mutation createMessage($text: String!, $sentById: ID!) {
+    createMessage(text: $text, sentById: $sentById) {
+      id
+      text
+      createdAt
+      sentBy {
+        id
+        name
+      }
+    }
+  }
+`
 
 export default compose(
   graphql(createMessage, {name : 'createMessageMutation'}),

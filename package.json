@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "^1.0.14"
   },
   "dependencies": {
-    "react": "^15.5.4",
-    "react-apollo": "^1.2.0",
-    "react-dom": "^15.5.4",
+    "react": "^16.0.0",
+    "react-apollo": "^1.4.16",
+    "react-dom": "^16.0.0",
     "sillyname": "^0.1.0",
-    "subscriptions-transport-ws": "^0.6.0"
+    "subscriptions-transport-ws": "0.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
