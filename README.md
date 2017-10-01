@@ -50,7 +50,7 @@ cd graphcool
 graphcool init
 ```
 
-> Notice that this command also creates the `.graphcoolrc` file you can use to configure your [environments](https://docs-next.graph.cool/reference/basics/project-configuration-opheidaix3#environments). 
+> **Note:** This command also creates the `.graphcoolrc` file you can use to configure your [environments](https://docs-next.graph.cool/reference/basics/project-configuration-opheidaix3#environments). 
 
 ### 3. Connect your App
 
