@@ -52,11 +52,9 @@ graphcool init
 
 > Notice that this command also creates the `.graphcoolrc` file you can use to configure your [environments](https://docs-next.graph.cool/reference/basics/project-configuration-opheidaix3#environments). 
 
-Copy your project ID and use it in the next step. 
-
 ### 3. Connect your App
 
-In `index.js` you need to set the variable `projectId` which is then used in `graphQLEndpoint` and `subscriptionsUrl`. 
+In `index.js` you need to set the variable `projectId` which is then used in `graphQLEndpoint` and `subscriptionsUrl`. You can access your project ID by using the `graphcool info` command inside the `graphcool` directory. 
 
 ### 4. Run the App 🚀
 
